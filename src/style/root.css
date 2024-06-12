@@ -1,0 +1,8 @@
+
+@page {
+    size: 210mm 297mm;
+    margin: 50mm;
+    padding:1rem;
+    border: 1px solid black;
+    background-color: red;
+  }
