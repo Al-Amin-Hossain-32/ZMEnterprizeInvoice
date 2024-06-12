@@ -6,17 +6,17 @@ export default function ProductDetails({amount,payDate}) {
 
         <Table bordered  >
             <tbody>
-            <tr  className="table-info">
+            <tr  className="text-center table-info">
                 <th>Payment Date</th>
                 <th>Service Fee</th>
                 <th>Amount</th>
             </tr>
-            <tr>
+            <tr className='text-center'>
                 <th>{payDate}</th>
                 <th>Cash</th>
                 <th>{amount}</th>
             </tr>
-            <tr className="table-info">
+            <tr className=" text-center table-info">
                 <th>Subtotal</th>
                 <th></th>
                 <th>{amount}</th>
