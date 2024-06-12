@@ -64,6 +64,7 @@ constructor(props) {
                   <div className="productDetails px-5">
                           <ProductDetails 
                             amount = {this.props.customer.amount}
+                            payDate={this.props.customer.payDate}
                           />
                   </div>
                   <div className="signature">
