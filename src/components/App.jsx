@@ -20,6 +20,7 @@ import FormgroupComp from './FormgroupComp';
 
 function App(props) {
   const [open, setOpen] = useState(false);
+
   // const [focusAfterClose, setFocusAfterClose] = useState(true);
   
 
@@ -48,9 +49,13 @@ function App(props) {
     const jobOrder = `BDJS${year}${month<10 ? '0'+month : month}${date<10 ? '0'+date : date}`;
     return jobOrder;
   }
-  const  genarateBarcodeNumber =(jobsheetNumb)=>{
-      
-    const barcode =`BDJS${jobsheetNumb}`;
+  const  genarateBarcodeNumber =()=>{
+    const time = new Date()
+  const year = time.getFullYear();
+  const month = time.getMonth();
+  const date = time.getDate();
+ 
+    const barcode = `BDPAY${year}${month<10 ? '0'+month : month}${date<10 ? '0'+date : date}`;
   return barcode
   }
   
@@ -60,8 +65,10 @@ function App(props) {
     payDate:paymentTimeGenarate(),
     customerPhone:'',
     jobOrder:jobSheetOrderGenarator(),
+    barcodeNumber:genarateBarcodeNumber(),
     customerEmail:'',
     amount:0,
+    invoiceOpend:false,
     
   }
   const [customer,setCustomer]= useState(intCustomer)
@@ -76,6 +83,7 @@ function App(props) {
   const submitHandler =(e)=>{
     e.preventDefault();
     setOpen(!open)
+    setInvoiceOpend(!invoiceOpend)
     // let invoice = document.getElementById('invoice');
     // invoice.classList.remove('d-none');
     // invoice.classList.add("d-block");
@@ -107,6 +115,7 @@ function App(props) {
                 <FormgroupComp changeHandler={handleChange} name='customerName' label='Customer Name :' value={customer.customerName} placeholder='Eng Masud Rana' type='text' />
                 <FormgroupComp changeHandler={handleChange} name='customerPhone' label='Customer Phone No :' value={customer.customerPhone} placeholder='01794722127' type='number' />
                 <FormgroupComp changeHandler={handleChange} name='jobOrder' label='Jobsheet Order :' value ={customer.jobOrder} type='text' />
+                <FormgroupComp changeHandler={handleChange} name='barcodeNumber' label='Bar Code Number :' value ={customer.barcodeNumber} type='text' />
                 <FormgroupComp changeHandler={handleChange} name='amount' value={customer.amount} label='Amount' placeholder='1250' type='number' />
                 <FormgroupComp changeHandler={handleChange} name='customerEmail' value={customer.customerEmail} label='Customer Email :' placeholder='example@gmail.com' type='email' />
                 

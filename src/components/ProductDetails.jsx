@@ -1,25 +1,26 @@
 import React from 'react'
 import { Table } from 'reactstrap'
+import '../style/productDetails.css'
 export default function ProductDetails({amount,payDate}) {
   return (
-    <div>
+    <div className='main-product'>
 
-        <Table bordered  >
+        <Table bordered className='borderd-table'  >
             <tbody>
-            <tr  className="text-center table-info">
-                <th>Payment Date</th>
-                <th>Service Fee</th>
-                <th>Amount</th>
+            <tr  className="text-center colorTable ">
+                <td>Payment Date</td>
+                <td>Service Fee</td>
+                <td>Amount</td>
             </tr>
-            <tr className='text-center'>
-                <th>{payDate}</th>
-                <th>Cash</th>
-                <th>{amount}</th>
+            <tr className='text-center cash'>
+                <td>{payDate}</td>
+                <td>Cash</td>
+                <td>{amount}</td>
             </tr>
-            <tr className=" text-center table-info">
-                <th>Subtotal</th>
-                <th></th>
-                <th>{amount}</th>
+            <tr className=" text-center colorTable ">
+                <td>Subtotal</td>
+                <td></td>
+                <td>{amount}</td>
             </tr>
             </tbody>
         </Table>

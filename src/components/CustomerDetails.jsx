@@ -3,8 +3,8 @@ import { Table } from 'reactstrap'
 import '../style/customerDetails.css'
 export default function CustomerDetails(customer) {
   return (
-    <div>
-        <Table className='customerTable' borderless>
+    <div className='customerTable'>
+        <Table  borderless>
     <tbody>
     <tr>
       <td>
@@ -25,7 +25,7 @@ export default function CustomerDetails(customer) {
         Duty Paragraph:
       </td>
       <td>
-        Masud Rana
+        
       </td>
       <td>
         Jobsheet Date :
@@ -43,7 +43,7 @@ export default function CustomerDetails(customer) {
         Business Registration No:
       </td>
       <td>
-        1258741015
+        
       </td>
       <td>
         Payment Date:
@@ -57,7 +57,7 @@ export default function CustomerDetails(customer) {
         Bank Account:
       </td>
       <td>
-        1258741015
+        
       </td>
       <td>
         Customer Name:

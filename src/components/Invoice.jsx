@@ -38,17 +38,17 @@ constructor(props) {
     
     return (
       
-      <div id='invoice' className={`container mt-3 ${this.props ? 'd-block': 'd-none'}`} >
+      <div id='invoice' className="container mt-2 "  >
         <ReactToPrint
                 pageStyle={()=> this.pageStyle}
                 trigger={() => <Button >Print</Button>}
                 content={() => this.printRef}
         />
             <div ref={(refer)=>(this.printRef=refer)} className="mt-4 invoiceDetails">
-              <div  className="main border border-secondary p-1">
+              <div  className="main-invoice">
                   <div className="header px-5 mb-3">
                           <Header 
-                            jobOrder={this.props.customer.jobOrder}
+                            barcodeNumber={this.props.customer.barcodeNumber}
                           />
                   </div>
                   <div className="customerDetails">
@@ -61,7 +61,7 @@ constructor(props) {
                             customerEmail ={this.props.customer.customerEmail}
                           />
                   </div>
-                  <div className="productDetails px-5">
+                  <div className="productDetails">
                           <ProductDetails 
                             amount = {this.props.customer.amount}
                             payDate={this.props.customer.payDate}
